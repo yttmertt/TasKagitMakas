@@ -14,20 +14,18 @@ namespace WindowsFormsApp2
 {
     //timer özelliği ekleme
     //ekrana skor kaça gelince biteceğini gösteren uyarı
-    //animasyon 
     //tur sistemi 
     //her turda sonuç ekrana uyarı şeklinde gelsin
-    //animasyon ekleme
     //ekranı güzelleştirme
     public partial class Form1 : Form
     {
-        int skor1 = 0;
-        int skor2 = 0;
         public Form1()
         {
             InitializeComponent();
         }
-        private void pictureBox3_Click(object sender, EventArgs e)
+        int skor1 = 0;
+        int skor2 = 0;
+        private void pcb_tas_Click(object sender, EventArgs e)
         {
             int tas = 1;
             int a = sayiüret();
@@ -35,7 +33,7 @@ namespace WindowsFormsApp2
             {
                 if (a==1)
                 {
-                    bilgisayar_secim.Image = pictureBox3.Image;
+                    bilgisayar_secim.Image = pcb_tas.Image;
                     bilgisayar_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                     bilgisayar_secim.Visible = true;
                     skor1++;
@@ -45,7 +43,7 @@ namespace WindowsFormsApp2
                 }
                 if (a==2)
                 {
-                    bilgisayar_secim.Image= pictureBox4.Image;
+                    bilgisayar_secim.Image= pcb_kagit.Image;
                     bilgisayar_secim.SizeMode= PictureBoxSizeMode.StretchImage;
                     bilgisayar_secim.Visible = true;
                     skor2++;
@@ -53,20 +51,20 @@ namespace WindowsFormsApp2
                 }
                 if (a == 3)
                 {
-                    bilgisayar_secim.Image = pictureBox5.Image;
+                    bilgisayar_secim.Image = pcb_makas.Image;
                     bilgisayar_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                     bilgisayar_secim.Visible = true;
                     skor1++;
                     oskor.Text= skor1.ToString();
                 }
-                oyuncu_secim.Image = pictureBox3.Image;
+                oyuncu_secim.Image = pcb_tas.Image;
                 oyuncu_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                 oyuncu_secim.Visible = true;
                 Toplam();
             }
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void pcb_kagit_Click(object sender, EventArgs e)
         {
             int kagıt = 2;
             int a = sayiüret();
@@ -74,7 +72,7 @@ namespace WindowsFormsApp2
             {
                 if (a == 1)
                 {
-                    bilgisayar_secim.Image = pictureBox3.Image;
+                    bilgisayar_secim.Image = pcb_tas.Image;
                     bilgisayar_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                     bilgisayar_secim.Visible = true;
                     skor1++;
@@ -82,7 +80,7 @@ namespace WindowsFormsApp2
                 }
                 if (a == 2)
                 {
-                    bilgisayar_secim.Image = pictureBox4.Image;
+                    bilgisayar_secim.Image = pcb_kagit.Image;
                     bilgisayar_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                     bilgisayar_secim.Visible = true;
                     skor1++;
@@ -92,20 +90,20 @@ namespace WindowsFormsApp2
                 }
                 if (a == 3)
                 {
-                    bilgisayar_secim.Image = pictureBox5.Image;
+                    bilgisayar_secim.Image = pcb_makas.Image;
                     bilgisayar_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                     bilgisayar_secim.Visible = true;
                     skor2++;
                     bskor.Text = skor2.ToString();
                 }
-                oyuncu_secim.Image = pictureBox4.Image;
+                oyuncu_secim.Image = pcb_kagit.Image;
                 oyuncu_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                 oyuncu_secim.Visible=true;
                 Toplam();
             }
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void pcb_makas_Click(object sender, EventArgs e)
         {
             int makas = 3;
             int a = sayiüret();
@@ -113,7 +111,7 @@ namespace WindowsFormsApp2
             {
                 if (a == 1)
                 {
-                    bilgisayar_secim.Image = pictureBox3.Image;
+                    bilgisayar_secim.Image = pcb_tas.Image;
                     bilgisayar_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                     bilgisayar_secim.Visible = true;
                     skor2++;
@@ -121,7 +119,7 @@ namespace WindowsFormsApp2
                 }
                 if (a == 2)
                 {
-                    bilgisayar_secim.Image = pictureBox4.Image;
+                    bilgisayar_secim.Image = pcb_kagit.Image;
                     bilgisayar_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                     bilgisayar_secim.Visible = true;
                     skor1++;
@@ -129,7 +127,7 @@ namespace WindowsFormsApp2
                 }
                  if (a == 3)
                 {
-                    bilgisayar_secim.Image = pictureBox5.Image;
+                    bilgisayar_secim.Image = pcb_makas.Image;
                     bilgisayar_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                     bilgisayar_secim.Visible = true;
                     skor1++;
@@ -137,7 +135,7 @@ namespace WindowsFormsApp2
                     oskor.Text = skor1.ToString();
                     bskor.Text = skor2.ToString();
                 }
-                oyuncu_secim.Image = pictureBox5.Image;
+                oyuncu_secim.Image = pcb_makas.Image;
                 oyuncu_secim.SizeMode = PictureBoxSizeMode.StretchImage;
                 oyuncu_secim.Visible = true;
                 Toplam();   
@@ -152,16 +150,16 @@ namespace WindowsFormsApp2
         }
         private void Toplam()
         {
-            if (skor1 == 10)
+            if (skor1 == 5)
             {
-                kazanan.Text = "OYUNCU";
-                MessageBox.Show("TEBRİKLER OYUNU KAZANDINIZ");
+                txtKazanan.Text = "OYUNCU";
+                MessageBox.Show("TEBRİKLER OYUNU KAZANDINIZ","UYARI");
                 this.Close();
             }
-            else if (skor2 == 10)
+            else if (skor2 == 5)
             {
-                kazanan.Text = "BİLGİSAYAR";
-                MessageBox.Show("KAYBETTİNİZ, TEKRAR DENEYİNİZ");
+                txtKazanan.Text = "BİLGİSAYAR";
+                MessageBox.Show("KAYBETTİNİZ, TEKRAR DENEYİNİZ","UYARI");
                 this.Close();
             } 
         }       
